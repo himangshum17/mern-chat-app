@@ -1,15 +1,14 @@
 import { Routes, Route, Link } from 'react-router-dom';
 import Chatpage from './pages/chatpage';
-import Homepage from './pages/homepage';
+import Loginpage from './pages/loginpage';
+import Registerpage from './pages/registerpage';
 
 function App() {
   return (
     <>
-      <h1 className='text-3xl font-bold text-green-600 underline'>
-        Hello world!
-      </h1>
       <Routes>
-        <Route path='/' element={<Homepage />} />
+        <Route path='/' element={<Loginpage />} />
+        <Route path='/register' element={<Registerpage />} />
         <Route path='chat' element={<Chatpage />} />
       </Routes>
     </>
