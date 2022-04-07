@@ -7,18 +7,32 @@ const Registerpage = () => {
         <h1 className='text-2xl'>Lets Connect</h1>
         <form className='mt-6 grid gap-4'>
           <FormInput
+            label='Full name'
+            type='text'
+            id='fullname'
+            name='fullname'
+            placeholder='Enter Full name'
+          />
+          <FormInput
             label='Email address'
             type='email'
             id='email'
             name='email'
-            placeholder='Enter your Email address'
+            placeholder='Enter Email address'
           />
           <FormInput
             label='Password'
             type='password'
             id='password'
             name='password'
-            placeholder='Enter your Password'
+            placeholder='Enter password'
+          />
+          <FormInput
+            label='Confirm password'
+            type='password'
+            id='confirmpassword'
+            name='confirmpassword'
+            placeholder='Enter Confirm password'
           />
           <Button extraclassName='justify-self-start' type='submit'>
             Register
