@@ -3,6 +3,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const userRoutes = require('./routes/userRoutes');
+const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 dotenv.config();
 const app = express();
 app.use(cors());
@@ -16,6 +17,9 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/user', userRoutes);
+
+app.use(notFound);
+app.use(errorHandler);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
