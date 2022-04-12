@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -16,6 +16,7 @@ const validationSchema = yup
   .required();
 
 const Loginpage = () => {
+  const navigate = useNavigate();
   const formOptions = { resolver: yupResolver(validationSchema) };
   const {
     register,
@@ -40,6 +41,7 @@ const Loginpage = () => {
         formData,
         config
       );
+      navigate('/chat');
     } catch (error) {
       console.log(error.message);
     }
